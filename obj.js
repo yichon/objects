@@ -131,15 +131,6 @@ function compareContent(o1, o2, mode) { // alert("mode:"+mode);
                 else if (Object.prototype.hasOwnProperty.call(o1, attr) !==
                         Object.prototype.hasOwnProperty.call(o2, attr))
                     return false;
-                /*
-                 else if (Object.prototype.hasOwnProperty.call(o1, attr)) {
-                 if (!Object.prototype.hasOwnProperty.call(o2, attr))
-                 return false;
-                 } else {
-                 if (Object.prototype.hasOwnProperty.call(o2, attr))
-                 return false;
-                 }
-                 */
                 if (!arguments.callee(o1[attr], o2[attr], mode))
                     return false;
             }
@@ -167,7 +158,7 @@ function compareContent(o1, o2, mode) { // alert("mode:"+mode);
 }
 
 // Building
-function compareObj(o1, o2){
+function compareObj(o1, o2) {
     return compareOwn(o1, o2);
 }
 function compareOwn(o1, o2) {
